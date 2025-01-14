@@ -1,0 +1,35 @@
+{
+    "name": "WGSR_test_RRDB",
+    "is_train": false,
+    "model": "srragan",
+    "scale": 5,
+    "gpu_ids": [0],
+    "datasets": {
+        "test": {
+            "name": "Wind_Speed_test",
+            "mode": "LRHR",
+            "dataroot_HR": "/home/wj/works/SR-project/WSdata/test/HR/",
+            "dataroot_LR": "/home/wj/works/SR-project/WSdata/test/LR/",
+            "phase": "test",
+            "scale": 5,
+            "data_type": "img"
+        }
+    },
+    "path": {
+        "root": "./experiments/test_RRDB/",
+        "pretrain_model_G": "experiments/test_RRDB/experiments/WGSR_1level_G_RRDB/models/latest_G.pth",
+        "results": "./experiments/test_RRDB/results",
+        "log": "./experiments/test_RRDB/results"
+    },
+    "network_G": {
+        "which_model_G": "RRDB_net",
+        "norm_type": null,
+        "mode": "CNA",
+        "nf": 64,
+        "nb": 23,
+        "in_nc": 3,
+        "out_nc": 3,
+        "gc": 32,
+        "group": 1
+    }
+}
